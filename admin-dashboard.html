@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Richmond Motors | Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="admin">
+<div class="page-wrapper">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-brand"><a href="index.html">Richmond Motors</a></div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link" data-page-name="home">Home</a>
+        <a href="vehicles.html" class="nav-link" data-page-name="vehicles">Vehicles</a>
+        <a href="services.html" class="nav-link" data-page-name="services">Services</a>
+        <a href="community.html" class="nav-link" data-page-name="community">Community</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="btn btn-secondary" data-theme-toggle>Light Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container" id="adminDashboardRoot">
+      <div class="card">
+        <h1>Admin Dashboard (Placeholders)</h1>
+        <p id="adminStatusText" class="text-muted"></p>
+        <button id="adminLogoutBtn" class="btn btn-secondary">Log Out</button>
+      </div>
+
+      <section style="margin-top:2rem;">
+        <div class="grid">
+          <div class="card">
+            <h2>Community Queue (Placeholder)</h2>
+            <p class="text-muted">View incoming messages from the Community form and add placeholder answers. Answered items will appear publicly on the Community page.</p>
+            <h3>Pending Messages</h3>
+            <ul id="adminQueueList" class="message-list"></ul>
+            <h3 style="margin-top:1.5rem;">Answered Messages</h3>
+            <ul id="adminAnsweredList" class="message-list"></ul>
+          </div>
+
+          <div class="card">
+            <h2>List New Car (Placeholder)</h2>
+            <p class="text-muted">Add vehicle placeholder entries for internal tracking (frontend only).</p>
+            <form id="adminVehicleForm" class="form">
+              <div class="form-group">
+                <label for="adminVehicleTitle">Vehicle Title</label>
+                <input id="adminVehicleTitle" type="text" placeholder="[Vehicle Title Placeholder]" />
+              </div>
+              <div class="form-group">
+                <label for="adminVehiclePrice">Price</label>
+                <input id="adminVehiclePrice" type="text" placeholder="[Price Placeholder]" />
+              </div>
+              <div class="form-group">
+                <label for="adminVehicleStatus">Availability Status</label>
+                <input id="adminVehicleStatus" type="text" placeholder="[Availability Placeholder]" />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Vehicle Placeholder</button>
+            </form>
+            <table class="table">
+              <thead>
+                <tr><th>Title</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+              </thead>
+              <tbody id="adminVehiclesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid" style="margin-top:1.5rem;">
+          <div class="card">
+            <h2>List New Service (Placeholder)</h2>
+            <p class="text-muted">Add service placeholder entries for internal planning (frontend only).</p>
+            <form id="adminServiceForm" class="form">
+              <div class="form-group">
+                <label for="adminServiceName">Service Name</label>
+                <input id="adminServiceName" type="text" placeholder="[Service Name Placeholder]" />
+              </div>
+              <div class="form-group">
+                <label for="adminServiceDescription">Description</label>
+                <textarea id="adminServiceDescription" rows="3" placeholder="[Service Description Placeholder]"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Add Service Placeholder</button>
+            </form>
+            <table class="table">
+              <thead>
+                <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+              </thead>
+              <tbody id="adminServicesTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h2>Site Announcements (Placeholder)</h2>
+            <p class="text-muted">Post placeholder announcement banners that could be displayed on public pages.</p>
+            <form id="announcementForm" class="form">
+              <div class="form-group">
+                <label for="announcementText">Announcement Text</label>
+                <textarea id="announcementText" rows="3" placeholder="[Announcement Placeholder Text]"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Post Announcement Placeholder</button>
+            </form>
+            <div id="announcementList" style="margin-top:1rem;"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© <span id="yearSpan"></span> Richmond Motors. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
