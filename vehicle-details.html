@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Richmond Motors | Vehicle Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Vehicle Details</title>
+
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
 </head>
-<body data-page="vehicles">
-<div class="page-wrapper">
+
+<body>
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="navbar-brand"><a href="index.html">Richmond Motors</a></div>
+      <div class="navbar-brand">
+        <a href="index.html"><img src="LogoGold.png" alt="Richmond Motors Logo" style="height:100px; margin-left:20px;" /></a>
+
+      </div>
       <nav class="nav-links">
         <a href="index.html" class="nav-link" data-page-name="home">Home</a>
         <a href="vehicles.html" class="nav-link" data-page-name="vehicles">Vehicles</a>
@@ -22,24 +25,20 @@
       </nav>
       <div class="nav-actions">
         <button type="button" class="btn btn-secondary" data-theme-toggle>Light Mode</button>
-        <a href="admin-login.html" class="btn btn-primary">Admin</a>
+       <a href="admin-login.html" class="btn btn-primary">Admin</a>
       </div>
     </div>
   </header>
 
-  <main class="main-content">
-    <div class="container">
-      <div id="vehicleDetailsRoot"></div>
-    </div>
+  <main>
+    <div id="vehicleDetailsRoot"></div>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <p>© <span id="yearSpan"></span> Richmond Motors. All rights reserved.</p>
-    </div>
+    <p>&copy; <span id="year"></span> Richmond Motors</p>
   </footer>
-</div>
-<script src="js/main.js"></script>
-<script src="js/vehicles.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/vehicles.js"></script>
 </body>
 </html>

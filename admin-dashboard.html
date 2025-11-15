@@ -13,7 +13,9 @@
 <div class="page-wrapper">
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="navbar-brand"><a href="index.html">Richmond Motors</a></div>
+      <div class="navbar-brand">
+        <a href="index.html"><img src="LogoGold.png" alt="Richmond Motors Logo" style="height:100px; margin-left:20px;" /></a>
+      </div>
       <nav class="nav-links">
         <a href="index.html" class="nav-link" data-page-name="home">Home</a>
         <a href="vehicles.html" class="nav-link" data-page-name="vehicles">Vehicles</a>
@@ -22,6 +24,7 @@
       </nav>
       <div class="nav-actions">
         <button type="button" class="btn btn-secondary" data-theme-toggle>Light Mode</button>
+        <a href="admin-login.html" class="btn btn-primary">Admin</a>
       </div>
     </div>
   </header>
@@ -29,7 +32,7 @@
   <main class="main-content">
     <div class="container" id="adminDashboardRoot">
       <div class="card">
-        <h1>Admin Dashboard (Placeholders)</h1>
+        <h1>Admin Dashboard (entries you can edit here)</h1>
         <p id="adminStatusText" class="text-muted"></p>
         <button id="adminLogoutBtn" class="btn btn-secondary">Log Out</button>
       </div>
@@ -37,35 +40,134 @@
       <section style="margin-top:2rem;">
         <div class="grid">
           <div class="card">
-            <h2>Community Queue (Placeholder)</h2>
-            <p class="text-muted">View incoming messages from the Community form and add placeholder answers. Answered items will appear publicly on the Community page.</p>
+            <h2>Community Queue (enter here)</h2>
+            <p class="text-muted">
+              View incoming messages from the Community form and add enter here answers.
+              Answered items will appear publicly on the Community page.
+            </p>
             <h3>Pending Messages</h3>
             <ul id="adminQueueList" class="message-list"></ul>
+
             <h3 style="margin-top:1.5rem;">Answered Messages</h3>
             <ul id="adminAnsweredList" class="message-list"></ul>
           </div>
 
           <div class="card">
-            <h2>List New Car (Placeholder)</h2>
-            <p class="text-muted">Add vehicle placeholder entries for internal tracking (frontend only).</p>
+            <h2>Customer Enquiries</h2>
+            <p class="text-muted">
+              View enquiries submitted from vehicle detail pages and mark them as handled or dismiss them.
+            </p>
+            <ul id="adminEnquiriesList" class="message-list"></ul>
+          </div>
+
+          <div class="card">
+            <h2>List New Car (enter here)</h2>
+            <p class="text-muted">
+              Add vehicle enter here entries including up to 10 image URLs and 1 video URL (frontend only).
+            </p>
             <form id="adminVehicleForm" class="form">
-              <div class="form-group">
-                <label for="adminVehicleTitle">Vehicle Title</label>
-                <input id="adminVehicleTitle" type="text" placeholder="[Vehicle Title Placeholder]" />
-              </div>
-              <div class="form-group">
-                <label for="adminVehiclePrice">Price</label>
-                <input id="adminVehiclePrice" type="text" placeholder="[Price Placeholder]" />
-              </div>
-              <div class="form-group">
-                <label for="adminVehicleStatus">Availability Status</label>
-                <input id="adminVehicleStatus" type="text" placeholder="[Availability Placeholder]" />
-              </div>
-              <button type="submit" class="btn btn-primary">Add Vehicle Placeholder</button>
-            </form>
+  <h3>Add / Edit Vehicle</h3>
+
+  <div class="form-group">
+    <label>Title</label>
+    <input id="adminVehicleTitle" type="text" enter here="[Vehicle Title]" />
+  </div>
+
+  <div class="form-group">
+    <label>Manufacturer</label>
+    <input id="adminVehicleManufacturer" type="text" enter here="[Manufacturer]" />
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <input id="adminVehiclePrice" type="text" enter here="[Price enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Mileage</label>
+    <input id="adminVehicleMileage" type="text" enter here="[Mileage enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Fuel Type</label>
+    <input id="adminVehicleFuel" type="text" enter here="[Fuel Type enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Transmission</label>
+    <input id="adminVehicleTransmission" type="text" enter here="[Transmission]" />
+  </div>
+
+  <div class="form-group">
+    <label>Year</label>
+    <input id="adminVehicleYear" type="text" enter here="[Year enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <textarea id="adminVehicleDescription" rows="3" enter here="[Description enter here]"></textarea>
+  </div>
+
+  <h4>Vehicle Specs (entries you can edit here)</h4>
+
+  <div class="form-group">
+    <label>Body Style</label>
+    <input id="adminVehicleSpecBody" type="text" enter here="[Body Style]" />
+  </div>
+
+  <div class="form-group">
+    <label>Engine Size</label>
+    <input id="adminVehicleSpecEngine" type="text" enter here="[Engine Size]" />
+  </div>
+
+  <div class="form-group">
+    <label>Colour</label>
+    <input id="adminVehicleSpecColour" type="text" enter here="[Colour]" />
+  </div>
+
+  <div class="form-group">
+    <label>Owners</label>
+    <input id="adminVehicleSpecOwners" type="text" enter here="[Owners]" />
+  </div>
+
+  <div class="form-group">
+    <label>MOT Status</label>
+    <input id="adminVehicleSpecMOT" type="text" enter here="[MOT Status]" />
+  </div>
+
+  <div class="form-group">
+    <label>Service History</label>
+    <input id="adminVehicleSpecHistory" type="text" enter here="[Service History]" />
+  </div>
+
+  <div class="form-group">
+    <label>Image URLs (comma-separated, max 10)</label>
+    <input id="adminVehicleImages" type="text" enter here="sampleimg.jpeg, sampleimg.jpeg" />
+  </div>
+
+  <div class="form-group">
+    <label>Upload Images from Device</label>
+    <input id="adminVehicleImageFiles" type="file" accept="image/*" multiple />
+    <p class="text-muted">You can upload up to 10 images. These are stored only in this browser.</p>
+  </div>
+
+  <div class="form-group">
+    <label>Video URL</label>
+    <input id="adminVehicleVideo" type="text" enter here="[Video enter here]" />
+  </div>
+
+  <button class="btn btn-primary" type="submit">Add Vehicle</button>
+</form>
+
+
             <table class="table">
               <thead>
-                <tr><th>Title</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+                <tr>
+                  <th>Title</th>
+                  <th>Price</th>
+                  <th>Year</th>
+                  <th>Actions</th>
+                </tr>
               </thead>
               <tbody id="adminVehiclesTableBody"></tbody>
             </table>
@@ -74,37 +176,72 @@
 
         <div class="grid" style="margin-top:1.5rem;">
           <div class="card">
-            <h2>List New Service (Placeholder)</h2>
-            <p class="text-muted">Add service placeholder entries for internal planning (frontend only).</p>
+            <h2>List New Service (enter here)</h2>
+            <p class="text-muted">
+              Add service enter here entries including an image URL (frontend only).
+            </p>
             <form id="adminServiceForm" class="form">
-              <div class="form-group">
-                <label for="adminServiceName">Service Name</label>
-                <input id="adminServiceName" type="text" placeholder="[Service Name Placeholder]" />
-              </div>
-              <div class="form-group">
-                <label for="adminServiceDescription">Description</label>
-                <textarea id="adminServiceDescription" rows="3" placeholder="[Service Description Placeholder]"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Add Service Placeholder</button>
-            </form>
+  <h3>Add / Edit Service</h3>
+
+  <div class="form-group">
+    <label>Service Name</label>
+    <input id="adminServiceName" type="text" enter here="[Service Name enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <textarea id="adminServiceDescription" rows="3" enter here="[Service Description enter here]"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Image URL</label>
+    <input id="adminServiceImage" type="text" enter here="sampleimg.jpeg" />
+  </div>
+
+  <div class="form-group">
+    <label>Average Cost</label>
+    <input id="adminServiceCost" type="text" enter here="£[Cost enter here]" />
+  </div>
+
+  <div class="form-group">
+    <label>Estimated Duration</label>
+    <input id="adminServiceTime" type="text" enter here="e.g., 1 hour, 2–3 days..." />
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <input id="adminServiceCategory" type="text" enter here="Diagnostics / Repairs / Maintenance" />
+  </div>
+
+  <button class="btn btn-primary" type="submit">Add Service</button>
+</form>
+
+
             <table class="table">
               <thead>
-                <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
               </thead>
               <tbody id="adminServicesTableBody"></tbody>
             </table>
           </div>
 
           <div class="card">
-            <h2>Site Announcements (Placeholder)</h2>
-            <p class="text-muted">Post placeholder announcement banners that could be displayed on public pages.</p>
+            <h2>Site Announcements (enter here)</h2>
+            <p class="text-muted">
+              Post enter here announcement banners that could be displayed on public pages.
+            </p>
             <form id="announcementForm" class="form">
               <div class="form-group">
                 <label for="announcementText">Announcement Text</label>
-                <textarea id="announcementText" rows="3" placeholder="[Announcement Placeholder Text]"></textarea>
+                <textarea id="announcementText" rows="3" enter here="[Announcement enter here Text]"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Post Announcement Placeholder</button>
+              <button type="submit" class="btn btn-primary">Post Announcement enter here</button>
             </form>
+
             <div id="announcementList" style="margin-top:1rem;"></div>
           </div>
         </div>
@@ -118,7 +255,11 @@
     </div>
   </footer>
 </div>
+
 <script src="js/main.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/services.js"></script>
 <script src="js/admin.js"></script>
+
 </body>
 </html>

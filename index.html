@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <title>Richmond Motors | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
+
 <body data-page="home">
 <div class="page-wrapper">
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="navbar-brand"><a href="index.html">Richmond Motors</a></div>
+      <div class="navbar-brand">
+        <a href="index.html"><img src="LogoGold.png" alt="Richmond Motors Logo" style="height:100px; margin-left:20px;" /></a>
+
+      </div>
       <nav class="nav-links">
         <a href="index.html" class="nav-link" data-page-name="home">Home</a>
         <a href="vehicles.html" class="nav-link" data-page-name="vehicles">Vehicles</a>
@@ -33,49 +37,174 @@
       <section class="hero">
         <div>
           <h1>Welcome to Richmond Motors</h1>
-          <p>[Business Introduction Placeholder – Richmond Motors is a family-run car sales and repairs business, offering honest guidance, clear pricing, and reliable work.]</p>
+          <p>
+            Richmond Motors is a trusted, family-run dealership based in the heart of Twickenham,
+            proudly led by Shakeel Shaikh, who brings over three decades of experience in buying, 
+            selling, and repairing cars. Known for honesty, clear communication, and genuine care 
+            for his customers, Shakeel has built a loyal community that continues to return year after year. 
+            Whether you’re looking for your next car or need reliable maintenance and repair work, 
+            Richmond Motors offers straightforward guidance, fair pricing, and a personal service 
+            you can depend on.
+          </p>
+
           <div class="contact-highlight">
-            <h3>Contact Details (Placeholders)</h3>
-            <p><strong>Phone:</strong> [Phone Placeholder]</p>
-            <p><strong>Email:</strong> [Email Placeholder]</p>
-            <p><strong>Address:</strong> [Address Placeholder]</p>
+            <h3>Contact Details</h3>
+            <p><strong>Phone Line 1:</strong>079XXXXXXXXX</p>
+            <p><strong>Phone Line 2:</strong>079XXXXXXXXX</p>
+            <p><strong>Email:</strong>RichmondMotors@gmail.com</p>
+            <p><strong>Address:</strong>22 Richmond road<br>Richmond<br>TW1 1AA</p>
           </div>
         </div>
+
         <div class="hero-img">
-          <img src="sampleimg.jpeg" alt="[Showroom Placeholder Image]" />
+          <img src="Showroom.jpg" alt="[Showroom enter here Image]" />
         </div>
       </section>
 
       <section style="margin-top:3rem;">
-        <h2>Highlighted Placeholders</h2>
+        <h2>Highlighted entries you can edit here</h2>
         <div class="grid grid-3" style="margin-top:1.5rem;">
-          <article class="card">
-            <h3>Vehicle Placeholder</h3>
-            <p class="text-muted">[Short placeholder explaining that vehicles for sale can be browsed on the dedicated Vehicles page.]</p>
-            <a href="vehicles.html" class="btn btn-primary">View Vehicles</a>
-          </article>
-          <article class="card">
-            <h3>Service Placeholder</h3>
-            <p class="text-muted">[Short placeholder explaining that repair and maintenance services are listed on the Services page.]</p>
-            <a href="services.html" class="btn btn-primary">View Services</a>
-          </article>
-          <article class="card">
-            <h3>Community Placeholder</h3>
-            <p class="text-muted">[Short placeholder explaining that customers can leave questions and see answered queries in the Community section.]</p>
-            <a href="community.html" class="btn btn-primary">Visit Community</a>
-          </article>
+          <div class="card featured-vehicle" id="featuredVehicleCard1">
+  <img id="vehImg1" class="featured-vehicle-img" src="" alt="">
+  <h3 id="vehTitle1">Loading...</h3>
+  <p id="vehDesc1" class="text-muted">Loading vehicle details...</p>
+  <a id="vehBtn1" href="vehicles.html" class="btn btn-primary">View Vehicles</a>
+</div>
+
+<div class="card featured-vehicle" id="featuredVehicleCard2">
+  <img id="vehImg2" class="featured-vehicle-img" src="" alt="">
+  <h3 id="vehTitle2">Loading...</h3>
+  <p id="vehDesc2" class="text-muted">Loading vehicle details...</p>
+  <a id="vehBtn2" href="vehicles.html" class="btn btn-primary">View Vehicles</a>
+</div>
+
+<div class="card featured-vehicle" id="featuredVehicleCard3">
+  <img id="vehImg3" class="featured-vehicle-img" src="" alt="">
+  <h3 id="vehTitle3">Loading...</h3>
+  <p id="vehDesc3" class="text-muted">Loading vehicle details...</p>
+  <a id="vehBtn3" href="vehicles.html" class="btn btn-primary">View Vehicles</a>
+</div>
+
+
+
         </div>
       </section>
+
+      <section>
+
+        <h2 id = "about" >About Us</h2>
+        <p>
+        --- > first point
+        </p>
+        <p>
+        --- > second point
+        </p>
+        <p>
+        --- > third point
+        </p>
+
+      </section>
+
     </div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
       <p>© <span id="yearSpan"></span> Richmond Motors. All rights reserved.</p>
-      <p class="text-muted">[Footer Placeholder – designed with gold, white, and dark contrast to stay readable for colourblind users.]</p>
+      <p class="text-muted">
+        [Footer enter here – designed with gold, white, and dark contrast to stay readable for colourblind users.]
+      </p>
     </div>
   </footer>
 </div>
+
 <script src="js/main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Load vehicles safely
+  let vehicles = [];
+  try {
+    vehicles = JSON.parse(localStorage.getItem("rm_all_vehicles")) || [];
+  } catch {
+    vehicles = [];
+  }
+
+  // Update a card with vehicle data
+  function updateCard(index, imgEl, titleEl, descEl, btnEl) {
+    if (vehicles[index]) {
+      const v = vehicles[index];
+
+      // Title + description
+      titleEl.textContent = v.title || "Vehicle available";
+      descEl.textContent =
+        `${v.manufacturer || ""} • ${v.year || ""} • ${v.price || ""}`;
+
+      // Image handling
+      const firstImg =
+        (v.images && v.images.length > 0 && v.images[0])
+          ? v.images[0]
+          : null;
+
+      if (firstImg) {
+        imgEl.src = firstImg;
+        imgEl.classList.remove("missing");
+        imgEl.alt = v.title;
+      } else {
+        imgEl.src = "";
+        imgEl.alt = "";
+        imgEl.classList.add("missing");
+        imgEl.textContent = "Image not found";
+      }
+
+      // Button links directly to the vehicle
+      btnEl.textContent = "View This Vehicle";
+      btnEl.href = `vehicle-details.html?id=${v.id}`;
+
+    } else {
+      // If no vehicle exists for this card
+      imgEl.src = "";
+      imgEl.classList.add("missing");
+      imgEl.textContent = "Image not found";
+
+      titleEl.textContent = "No vehicle available";
+      descEl.textContent = "More vehicles will appear here once added.";
+      btnEl.href = "vehicles.html";
+    }
+  }
+
+  // CARD 1 → FIRST VEHICLE
+  updateCard(
+    0,
+    document.getElementById("vehImg1"),
+    document.getElementById("vehTitle1"),
+    document.getElementById("vehDesc1"),
+    document.getElementById("vehBtn1")
+  );
+
+  // CARD 2 → SECOND VEHICLE
+  updateCard(
+    1,
+    document.getElementById("vehImg2"),
+    document.getElementById("vehTitle2"),
+    document.getElementById("vehDesc2"),
+    document.getElementById("vehBtn2")
+  );
+
+  // CARD 3 → THIRD VEHICLE
+  updateCard(
+    2,
+    document.getElementById("vehImg3"),
+    document.getElementById("vehTitle3"),
+    document.getElementById("vehDesc3"),
+    document.getElementById("vehBtn3")
+  );
+
+});
+</script>
+
+
+
 </body>
 </html>
